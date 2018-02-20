@@ -25,6 +25,8 @@
           <a class="navbar-item" href="admin.html">
             Klubber
           </a>
+          <router-link to="/signin" class="navbar-item">Logg inn</router-link>
+
         </div>
       </div>
     </div>

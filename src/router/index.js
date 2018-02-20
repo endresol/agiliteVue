@@ -3,7 +3,8 @@ import VueRouter from 'vue-router';
 import store from '../store';
 
 import Competitions from '../components/competitions';
-import Signin from '../components/signin';
+import SignIn from '../components/signin';
+import SignUp from '../components/signup';
 import Profile from '../components/profile';
 
 Vue.use(VueRouter);
@@ -21,7 +22,8 @@ export default new VueRouter({
     mode: 'history',
     routes: [
         {path: '/', name: 'Competitions', component: Competitions },
-        {path: '/signin', name: 'Logg inn', component: Signin },
+        {path: '/signin', name: 'SignIn', component: SignIn },
+        {path: '/signup', name: 'SignUp', component: SignUp },
         {path: '/profile', name: 'Profile', component: Profile, beforeEnter: ifAuthenticated },
     ]
 })

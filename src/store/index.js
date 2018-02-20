@@ -7,7 +7,7 @@ import * as actions from './actions';
 Vue.use(Vuex);
 
 const getters = {
-  isAuthenticated: state => !!state.user,
+  isAuthenticated: state => !!state.user.uid,
 }
 
 const state = {

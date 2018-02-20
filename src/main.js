@@ -14,6 +14,7 @@ firebaseApp.auth().onAuthStateChanged(user => {
     store.dispatch('signIn', user);
   }
 })
+
 new Vue ({
   el: '#app',
   router,
