@@ -6,6 +6,10 @@ import * as actions from './actions';
 
 Vue.use(Vuex);
 
+const getters = {
+  isAuthenticated: state => !!state.user,
+}
+
 const state = {
     user: {},
     competitions: [{}],
@@ -15,4 +19,5 @@ export default new Vuex.Store({
     state,
     mutations,
     actions,
+    getters,
 });

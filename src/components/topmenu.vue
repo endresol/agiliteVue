@@ -2,7 +2,7 @@
     <div class="container">
       <div class="navbar-brand">
         <a class="navbar-item brand-text" href="../">
-          AgiLite          
+          AgiLite
         </a>
         <div class="navbar-burger burger" data-target="navMenu">
           <span></span>
@@ -12,6 +12,7 @@
       </div>
       <div id="navMenu" class="navbar-menu">
         <div class="navbar-start">
+          <router-link to="/profile" class="navbar-item">Profil</router-link>
           <a class="navbar-item" href="admin.html">
             Konkurranser
           </a>

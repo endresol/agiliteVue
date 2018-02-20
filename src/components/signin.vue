@@ -25,14 +25,18 @@
                 v-model="password" />
             </div>
           </div>
-
-          <button class="button is-block is-info is-large is-fullwidth" @click="signIn">Logg inn</button>
         </form>
+        <br />
+        <button class="button is-block is-info is-large is-fullwidth" @click="signIn">Logg inn</button>
         <p class="has-text-grey">
           <a href="../">Ny bruker</a> &nbsp;·&nbsp;
           <a href="../">Glemt passord</a> &nbsp;·&nbsp;
           <a href="../">Hjelp?</a>
         </p>
+        <br />
+        <div class="error">
+           {{error.message}}
+        </div>
       </div>
     </div>
   </div>
@@ -40,7 +44,8 @@
 
 <script>
 
-import firebaseApp from '../firebaseApp';
+import { firebaseApp } from '../firebaseApp';
+
 export default {
   data() {
     return {
