@@ -4,7 +4,7 @@
       <div class="column is-half is-offset-one-quarter has-text-centered">
         <h3 class="title has-text-grey">Login</h3>
         <p class="subtitle has-text-grey">Please login to proceed.</p>
-        <form>
+        <form v-on:submit.prevent>
           <div class="field">
             <div class="control">
               <input
@@ -25,14 +25,12 @@
                 v-model="password" />
             </div>
           </div>
+          <button class="button is-block is-info is-large is-fullwidth" @click="signIn">Logg inn</button>
         </form>
-        <br />
-        <button class="button is-block is-info is-large is-fullwidth" @click="signIn">Logg inn</button>
         <br />
         <div>
           <router-link to="/signup">
           <button class="button is-block is-info is-large is-fullwidth">Ny bruker</button></router-link>
-
         </div>
         <p>
           <a href="../">Ny bruker</a> &nbsp;·&nbsp;
