@@ -4,11 +4,14 @@
     {{$store.state.user.email}}
 
     <button class="button is-danger" @click="signOut">Logg ut</button>
+    <hr>
+    <AddDog />
   </div>
 </template>
 
 <script>
 import { firebaseApp } from '../../firebaseApp';
+import AddDog from '../dogs/AddDog';
 
 export default {
   methods: {
@@ -16,6 +19,10 @@ export default {
       this.$store.dispatch('signOut');
       firebaseApp.auth().signOut();
     }
+  },
+
+  components: {
+    AddDog,
   }
 }
 </script>
