@@ -7,3 +7,11 @@ export const signIn = ({commit}, user_payload) => {
 export const signOut = ({commit}) => {
   commit(types.SIGN_OUT);
 }
+
+export const setCompetitions = ({commit}, payload) => {
+  commit(types.SET_COMPETITIONS, payload);
+}
+
+export const setDogs = ({commit}, dogs_payload) => {
+  commit(types.SET_DOGS, dogs_payload);
+}

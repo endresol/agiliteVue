@@ -11,3 +11,4 @@ const config = {
 
   export const firebaseApp = firebase.initializeApp(config);
   export const dogsRef = firebaseApp.database().ref().child('dogs');
+  export const competitionsRef = firebaseApp.database().ref().child('competitions');

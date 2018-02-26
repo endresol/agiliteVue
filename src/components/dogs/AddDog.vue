@@ -142,13 +142,13 @@ export default {
         AGJumpLevel: null,
         nkkno: null,
         handlername: null,
-        fk_owner: null,
+        fkowner: null,
       }
     }
   },
   methods: {
     addDog() {
-      this.dog.fk_owner = this.$store.state.user.uid;
+      this.dog.fkowner = this.$store.state.user.uid;
       dogsRef.push(this.dog);
     }
   }

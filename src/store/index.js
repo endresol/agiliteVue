@@ -12,6 +12,7 @@ const getters = {
 
 const state = {
     user: {},
+    mydogs: [{}],
     competitions: [{}],
 }
 

@@ -5,13 +5,13 @@
 
     <button class="button is-danger" @click="signOut">Logg ut</button>
     <hr>
-    <AddDog />
+    <Dogs />
   </div>
 </template>
 
 <script>
 import { firebaseApp } from '../../firebaseApp';
-import AddDog from '../dogs/AddDog';
+import Dogs from '../dogs';
 
 export default {
   methods: {
@@ -22,7 +22,7 @@ export default {
   },
 
   components: {
-    AddDog,
-  }
+    Dogs,
+  },
 }
 </script>
