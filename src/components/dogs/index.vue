@@ -6,7 +6,7 @@
       </div>
       <button class="modal-close is-large" aria-label="close"></button>
     </div>
-    {{$store.state.dogs}}
+    {{mydogs}}
   </div>
 </template>
 
@@ -18,7 +18,7 @@ import AddDog from '../dogs/AddDog';
 export default {
   data() {
     return {
-      dogs: {},
+      mydogs: {},
     }
   },
   components: {
@@ -26,12 +26,15 @@ export default {
   },
   mounted() {
     const fkowner = this.$store.state.user.uid;
+    console.log('fkowner', fkowner);
+
     dogsRef.orderByChild("fkowner").equalTo(fkowner).on('value', snap => {
       let dogs = [];
       snap.forEach(dog => {
         dogs.push(dog.val())
       });
       this.$store.dispatch('setDogs', dogs);
+      this.mydogs = dogs;
     })
   }
 }

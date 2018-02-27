@@ -12,7 +12,7 @@ export default {
   mounted() {
     competitionsRef.on('value', snap => {
       let competitions = [];
-      snap.array.forEach(competition => {
+      snap.forEach(competition => {
         competitions.push(competition.val())
       });
       this.$store.dispatch('setCompetitions', competitions);

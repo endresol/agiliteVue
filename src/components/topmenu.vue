@@ -1,9 +1,9 @@
 <template>
     <div class="container">
       <div class="navbar-brand">
-        <a class="navbar-item brand-text" href="../">
+        <router-link to="/" class="navbar-item brand-text">
           AgiLite
-        </a>
+        </router-link>
         <div class="navbar-burger burger" data-target="navMenu">
           <span></span>
           <span></span>
@@ -12,21 +12,13 @@
       </div>
       <div id="navMenu" class="navbar-menu">
         <div class="navbar-start">
-          <router-link to="/profile" class="navbar-item">Profil</router-link>
-          <a class="navbar-item" href="admin.html">
-            Konkurranser
-          </a>
-          <a class="navbar-item" href="admin.html">
-            Resultater
-          </a>
-          <a class="navbar-item" href="admin.html">
-            Live!
-          </a>
-          <a class="navbar-item" href="admin.html">
-            Klubber
-          </a>
+          <router-link to="/" class="navbar-item">Konkurranser</router-link>
+          <router-link to="/results" class="navbar-item">Resultater</router-link>
+          <router-link to="/clubs" class="navbar-item">Klubber</router-link>
+
         </div>
         <div class="navbar-end">
+          <router-link to="/profile" class="navbar-item">Profil</router-link>
           <div class="navbar-item">
             <p class="control">
               <router-link to="/signin" class="button is-primary">
