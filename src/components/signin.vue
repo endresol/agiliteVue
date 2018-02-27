@@ -1,7 +1,7 @@
 <template>
   <div class="section">
     <div class="columns">
-      <div class="column is-half is-offset-one-quarter has-text-centered">
+      <div class="column is-one-third is-offset-one-third has-text-centered">
         <h3 class="title has-text-grey">Login</h3>
         <p class="subtitle has-text-grey">Please login to proceed.</p>
         <form v-on:submit.prevent>
@@ -9,7 +9,7 @@
             <div class="control">
               <input
                 type="email"
-                class="input is-large"
+                class="input is-normal"
                 placeholder="E-post adresse"
                 autofocus=""
                 v-model="email" />
@@ -20,20 +20,20 @@
             <div class="control">
               <input
                 type="password"
-                class="input is-large"
+                class="input is-normal"
                 placeholder="Passord"
                 v-model="password" />
             </div>
           </div>
-          <button class="button is-block is-info is-large is-fullwidth" @click="signIn">Logg inn</button>
+          <button class="button is-block is-info is-normal is-fullwidth" @click="signIn">Logg inn</button>
         </form>
-        <br />
+        <hr class="eller" />
         <div>
           <router-link to="/signup">
-          <button class="button is-block is-info is-large is-fullwidth">Ny bruker</button></router-link>
+          <button class="button is-block is-info is-normal is-fullwidth">Ny bruker</button></router-link>
         </div>
         <p>
-          <a href="../">Ny bruker</a> &nbsp;·&nbsp;
+          <a href="../">Ny klubb</a> &nbsp;·&nbsp;
           <a href="../">Glemt passord</a> &nbsp;·&nbsp;
           <a href="../">Hjelp?</a>
         </p>

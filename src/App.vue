@@ -4,14 +4,7 @@
       <Topmenu />
     </nav>
     <div class="container">
-      <div class="columns">
-        <div class="column is-3 is-light-gray">
-          <Rightmenu />
-        </div>
-        <div class="column is-9">
-          <router-view></router-view>
-        </div>
-      </div>
+      <router-view></router-view>
     </div>
   </div>
 </template>

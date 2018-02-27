@@ -25,9 +25,20 @@
           <a class="navbar-item" href="admin.html">
             Klubber
           </a>
-          <router-link to="/signin" class="navbar-item">Logg inn</router-link>
-
         </div>
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <p class="control">
+              <router-link to="/signin" class="button is-primary">
+                <span class="icon">
+                  <i class="fas fa-lock-open"></i>
+                </span>
+                <span>Logg inn</span>
+              </router-link>
+            </p>
+          </div>
+        </div>
+
       </div>
     </div>
 </template>

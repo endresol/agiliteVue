@@ -4,4 +4,25 @@ body {
     background-color: $backgroundcolor;
 }
 
+hr.eller {
+  font-family: Arial, sans-serif; /* choose the font you like */
+  text-align: center; /* horizontal centering */
+  line-height: 1px; /* vertical centering */
+  font-size: 1em; /* choose font size you like */
+  overflow: visible;
+}
+
+hr.eller:after {
+  content: " eller "; /* section sign */
+  color: #999;
+  display: inline; /* for vertical centering and background knockout */
+  background-color: #fff; /* same as background color */
+  padding: 0 0.5em; /* size of background color knockout */
+}
+
+/* opera doesn't render correctly. hide section sign */
+x:-o-prefocus, hr.eller:after {
+  content: "";
+}
+
 @import '~bulma/bulma'
