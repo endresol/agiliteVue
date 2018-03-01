@@ -7,16 +7,16 @@
 </template>
 
 <script>
-import { competitionsRef } from '../../firebaseApp';
+import { db } from '../../firebaseApp';
 export default {
   mounted() {
-    competitionsRef.on('value', snap => {
-      let competitions = [];
-      snap.forEach(competition => {
-        competitions.push(competition.val())
-      });
-      this.$store.dispatch('setCompetitions', competitions);
-    })
+    // competitionsRef.on('value', snap => {
+    //   let competitions = [];
+    //   snap.forEach(competition => {
+    //     competitions.push(competition.val())
+    //   });
+    //   this.$store.dispatch('setCompetitions', competitions);
+    // })
   }
 }
 </script>

@@ -1,7 +1,7 @@
 <template>
   <div>
-    <div class="modal">
-      <div class="modal-content">
+    <div class="modalc">
+      <div class="modalc-content ">
         <AddDog />
       </div>
       <button class="modal-close is-large" aria-label="close"></button>
@@ -12,7 +12,7 @@
 
 
 <script>
-import { firebaseApp, dogsRef } from '../../firebaseApp';
+import { firebaseApp, db } from '../../firebaseApp';
 import AddDog from '../dogs/AddDog';
 
 export default {
@@ -28,14 +28,22 @@ export default {
     const fkowner = this.$store.state.user.uid;
     console.log('fkowner', fkowner);
 
-    dogsRef.orderByChild("fkowner").equalTo(fkowner).on('value', snap => {
+    db.collection("dogs").where("fkowner", "==", fkowner).get().then((querySnapshot) => {
       let dogs = [];
-      snap.forEach(dog => {
-        dogs.push(dog.val())
+      querySnapshot.forEach((dog) => {
+          dogs.push(dog.data());
       });
       this.$store.dispatch('setDogs', dogs);
       this.mydogs = dogs;
-    })
+    });
+    // dogsRef.orderByChild("fkowner").equalTo(fkowner).on('value', snap => {
+    //   let dogs = [];
+    //   snap.forEach(dog => {
+    //     dogs.push(dog.val())
+    //   });
+    //   this.$store.dispatch('setDogs', dogs);
+    //   this.mydogs = dogs;
+    // })
   }
 }
 </script>

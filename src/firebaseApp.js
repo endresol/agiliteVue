@@ -1,4 +1,5 @@
 import firebase from 'firebase';
+import 'firebase/firestore';
 
 const config = {
     apiKey: "AIzaSyBznrw-OE3aMCXXS9fCYYJw3Kb8MoBsJic",
@@ -10,5 +11,6 @@ const config = {
   };
 
   export const firebaseApp = firebase.initializeApp(config);
-  export const dogsRef = firebaseApp.database().ref().child('dogs');
-  export const competitionsRef = firebaseApp.database().ref().child('competitions');
+  // export const dogsRef = firebaseApp.database().ref().child('dogs');
+  // export const competitionsRef = firebaseApp.database().ref().child('competitions');
+  export const db = firebaseApp.firestore();

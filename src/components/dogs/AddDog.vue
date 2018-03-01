@@ -127,7 +127,8 @@
 </template>
 
 <script>
-import { dogsRef } from '../../firebaseApp';
+import { db } from '../../firebaseApp';
+
 export default {
   data() {
     return {
@@ -149,7 +150,16 @@ export default {
   methods: {
     addDog() {
       this.dog.fkowner = this.$store.state.user.uid;
-      dogsRef.push(this.dog);
+      // dogsRef.push(this.dog);
+      db.collection('dogs').add({
+        ...this.dog
+      })
+      .then(function(docRef) {
+        console.log("Document written with ID: ", docRef.id);
+      })
+      .catch(function(error) {
+          console.error("Error adding document: ", error);
+      });
     }
   }
 }
