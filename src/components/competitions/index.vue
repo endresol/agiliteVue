@@ -10,13 +10,13 @@
 import { db } from '../../firebaseApp';
 export default {
   mounted() {
-    // competitionsRef.on('value', snap => {
-    //   let competitions = [];
-    //   snap.forEach(competition => {
-    //     competitions.push(competition.val())
-    //   });
-    //   this.$store.dispatch('setCompetitions', competitions);
-    // })
+    db.collection('competitions').get().then('value', snap => {
+      let competitions = [];
+      snap.forEach(competition => {
+        competitions.push(competition.data())
+      });
+      this.$store.dispatch('setCompetitions', competitions);
+    })
   }
 }
 </script>

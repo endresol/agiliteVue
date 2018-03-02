@@ -36,14 +36,6 @@ export default {
       this.$store.dispatch('setDogs', dogs);
       this.mydogs = dogs;
     });
-    // dogsRef.orderByChild("fkowner").equalTo(fkowner).on('value', snap => {
-    //   let dogs = [];
-    //   snap.forEach(dog => {
-    //     dogs.push(dog.val())
-    //   });
-    //   this.$store.dispatch('setDogs', dogs);
-    //   this.mydogs = dogs;
-    // })
   }
 }
 </script>
