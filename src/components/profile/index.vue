@@ -1,11 +1,23 @@
 <template>
   <div>
-    <h2>Min Profil</h2>
-    {{$store.state.user.email}}
+    <div class="level">
+      <div class="level-left">
+        <h2 class="level-item">Min Profil</h2>
+      </div>
+      <div class="level-right">
+        <button class="button is-danger" @click="signOut">Logg ut</button>
+      </div>
+    </div>
+    <div class="columns">
+      <div class="column">
+        {{$store.state.user.email}}
+      </div>
+      <div class="column">
+        <Dogs />
+      </div>
+    </div>
 
-    <button class="button is-danger" @click="signOut">Logg ut</button>
     <hr>
-    <Dogs />
   </div>
 </template>
 

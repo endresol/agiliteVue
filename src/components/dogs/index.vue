@@ -1,12 +1,34 @@
 <template>
   <div>
-    <div class="modalc">
-      <div class="modalc-content ">
+    <div class="level">
+      <div class="level-left">
+        <h3>Mine hunder</h3>
+      </div>
+      <div class="level-right">
         <AddDog />
       </div>
-      <button class="modal-close is-large" aria-label="close"></button>
     </div>
-    {{mydogs}}
+    <div>
+      <table class="table is-fullwidth is-hoverable">
+        <thead>
+          <tr>
+            <th>Navn</th>
+            <th>Klasse AG</th>
+            <th>Hopp</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            v-for="dog in mydogs"
+            v-bind:key="dog.nkkno"
+            >
+            <td> {{dog.nickname}}</td>
+            <td> {{dog.AGLevel}}</td>
+            <td> {{dog.AGJumpLevel}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </template>
 
@@ -14,6 +36,7 @@
 <script>
 import { firebaseApp, db } from '../../firebaseApp';
 import AddDog from '../dogs/AddDog';
+import { log } from 'util';
 
 export default {
   data() {
