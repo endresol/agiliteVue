@@ -138,6 +138,7 @@
     </div>
     <button class="button is-stndard is-small" @click="openform">ny hund</button>
   </div>
+
 </template>
 
 <script>
